@@ -1,0 +1,85 @@
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 50px; /* ajusta el tamaño del logotipo según tus necesidades */
+    margin-right: 10px; /* ajusta el margen según tus necesidades */
+}
+
+
+body{
+    background-image: url('../img/fondo7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /*para que se adecue al tamaño total del navegador*/
+    background-attachment: fixed;/*posicionar imagen en un solo lugar*/
+    background-position: center;
+}
+
+
+
+.caja {
+    display: inline-block;
+    padding: 10px;
+    
+ }
+ 
+  
+#texto {
+    
+    font-size: 2em;
+    
+    font-family: 'Gajraj One', cursive;
+    font-family: 'Secular One', sans-serif;
+    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85);
+    display: inline-block;
+    color: red;
+}
+
+table{
+    margin: auto;
+    color: fff;
+    font-size: 1.5em;
+    table-layout: fixed;
+    border-collapse: collapse;
+    
+    max-width: 100%; 
+    height: auto;
+}
+.tabla-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+thead{
+    background:rgb(111, 12, 20) ;
+    
+
+}
+
+th{
+    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85);
+    color: white;
+    padding: 20px 40px;
+    font-weight: 700px;
+    text-transform: uppercase;
+    border-bottom: solid 1 px rgba(255, 255, 255, 0.2);
+}
+
+tbody tr{
+    cursor: pointer;
+}
+
+tbody tr:hover{
+    background: rgba(3, 21, 117);
+    
+}
+
+------------------------
+.logo {
+    width: 5rem;
+    height: auto;
+    margin-right: 1rem;
+}

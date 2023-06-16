@@ -1,0 +1,105 @@
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 50px; /* ajusta el tamaño del logotipo según tus necesidades */
+    margin-right: 10px; /* ajusta el margen según tus necesidades */
+}
+
+
+body{
+    background-image: url('../img/fondo7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /*para que se adecue al tamaño total del navegador*/
+    background-attachment: fixed;/*posicionar imagen en un solo lugar*/
+    background-position: center;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+
+
+.caja {
+    display: inline-block;
+    padding: 10px;
+    
+ }
+ 
+  
+#texto {
+    
+    font-size: 2em;
+    font-family: 'Gajraj One', cursive;
+    font-family: 'Secular One', sans-serif;
+    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85);
+    display: inline-block;
+    color: red;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    color: rgb(255, 87, 51);
+    font-size: 1em;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align:center;
+}
+th,
+td {
+  overflow: hidden;
+  resize: horizontal;
+  
+}
+
+thead{
+    background:rgb(111, 12, 20) ;
+    text-align:center;
+
+}
+tr{
+    text-align:center;
+}
+
+th {
+    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85);
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+tbody tr{
+    cursor: pointer;
+}
+
+tbody tr:hover{
+    background: rgba(3, 21, 117);
+    
+}
+
+
+th.expandir-columna {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+  
+  th.expandir-columna.expandir {
+    white-space: normal;
+    word-wrap: break-word;
+    max-height: none;
+    overflow: visible;
+  }
