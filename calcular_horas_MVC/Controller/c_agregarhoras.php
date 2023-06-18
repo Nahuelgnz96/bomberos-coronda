@@ -48,7 +48,7 @@ if (!empty($_POST["agregar"])) {
         $horas_total = 0;
     }
 
-    $tiempo = $horaTrabajadas;
+    $tiempo = $horasdia;
     $tiempo_sin_dos_puntos = str_replace(':', '', $tiempo);
     $tiempo_formato_24h = $tiempo_sin_dos_puntos . "00";
 
@@ -69,14 +69,14 @@ if (!empty($_POST["agregar"])) {
 
         } else {
             echo "No se encontraron registros de horas trabajadas para este empleado.";
-            $horasTotal = $horaTrabajadas;
+            $horasTotal = $horasdia;
         }
     } else {
         echo "Error al ejecutar la consulta: " . $conexion->error;
     }
 
     //convierto las horas trabajadas ej 24:00 a 240000
-    $tiempo = $horaTrabajadas;
+    $tiempo = $horasdia;
 
     $tiempo_sin_dos_puntos = str_replace(':', '', $tiempo);
     $tiempo_formato_24h = $tiempo_sin_dos_puntos . "00";
@@ -107,7 +107,7 @@ if (!empty($_POST["agregar"])) {
 
     if ($mes > $mesAnterior) {
         $horasTotal = $tiempo_formato_24h;
-        $sql = "INSERT INTO `bombero_hora` (`id_bombero`, `fecha_hora_entrada`, `fecha_hora_salida`, `horas`, `horas_total`) VALUES ('$id_bombero', '$horasdia', '$fechaHoraSalida', '$horaTrabajadas', '$horasTotal')";
+        $sql = "INSERT INTO `bombero_hora` (`id_bombero`, `fecha_hora_entrada`, `fecha_hora_salida`, `horas`, `horas_total`) VALUES ('$id_bombero', '$fechaHoraEntrada', '$fechaHoraSalida', '$horasdia', '$horasTotal')";
 
         if ($conexion->query($sql) === TRUE) {
             echo '<div class="alert alert-success">Hora registrada corectamente</div>';
@@ -118,7 +118,7 @@ if (!empty($_POST["agregar"])) {
         }
 
     } else {
-        $sql = "INSERT INTO `bombero_hora` (`id_bombero`, `fecha_hora_entrada`, `fecha_hora_salida`, `horas`, `horas_total`) VALUES ('$id_bombero', '$fechaHoraEntrada', '$fechaHoraSalida', '$horaTrabajadas', '$horasTotal')";
+        $sql = "INSERT INTO `bombero_hora` (`id_bombero`, `fecha_hora_entrada`, `fecha_hora_salida`, `horas`, `horas_total`) VALUES ('$id_bombero', '$fechaHoraEntrada', '$fechaHoraSalida', '$horasdia', '$horasTotal')";
 
         if ($conexion->query($sql) === TRUE) {
             echo '<div class="alert alert-success">Hora registrada corectamente</div>';
