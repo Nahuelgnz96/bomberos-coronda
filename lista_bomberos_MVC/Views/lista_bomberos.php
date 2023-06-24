@@ -29,6 +29,8 @@ function eliminarBombero(id) {
                 'Your file has been deleted.',
                 'success'
                 )
+                window.location.href = '../Controller/eliminar_bombero.php?id=' + id;
+                
             }
             })
                 }
@@ -108,7 +110,7 @@ function eliminarBombero(id) {
                                     <th>
                                         <a href="../Controller/c_agregar_bombero.php" class="btn btn-small btn-info"><i class="fa-solid fa-user-plus"></i></a>
                                         <a href="v_modificar_bombero.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        <a onclick="eliminarBombero(<?= $datos->id ?>)" class="btn btn-small btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                        <a onclick="eliminarBombero(<?= $datos->id ?>)"  class="btn btn-small btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                     </th>
                                     
                                 </tr>
