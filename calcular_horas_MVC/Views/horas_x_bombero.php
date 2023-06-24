@@ -50,7 +50,7 @@
                         <h3 class="card-tittle">Datos del Bombero/a</h3>
                     </div>
                     <div class="card-body bg-light" id="datosbombero" >
-                        <form class="row" >
+                        <form class="row">
                             <div class="col">
                                 <?php
                                             $fecha = date('m');
@@ -59,7 +59,7 @@
                                                 
                                             ?>
                                     <div class="form-group col-md4">
-                                        <label for=""><?=$datos->nombre." ".$datos->apellido?> </label>
+                                        <label name="nombre" for=""><?=$datos->nombre." ".$datos->apellido?> </label>
                                     </div>
                                     <div class="form-group col-md4">
                                         <label for="">Puesto: </label>
@@ -98,7 +98,7 @@
                                     <input type="hidden"  name="id" value="<?= $_GET["id"] ?>">
                                     <div class="content-select">
                                         <select id="mes" name="mes">
-                                            <option value="1" <?= $mesSeleccionado == '2' ? 'selected' : '' ?>>ENERO</option>
+                                            <option value="1" <?= $mesSeleccionado == '1' ? 'selected' : '' ?>>ENERO</option>
                                             <option value="2" <?= $mesSeleccionado == '2' ? 'selected' : '' ?>>FEBRERO</option>
                                             <option value="3" <?= $mesSeleccionado == '3' ? 'selected' : '' ?>>MARZO</option>
                                             <option value="4" <?= $mesSeleccionado == '4' ? 'selected' : '' ?>>ABRIL</option>
@@ -213,17 +213,34 @@
                         </table>
                     </div>
                 </div>
+                <script>
+                    document.getElementById('mes').addEventListener('change', function() {
+                    var selectedMonth = this.value;
+                    var currentUrl = window.location.href;
+                    var updatedUrl = currentUrl.split('?')[0] + '?id=<?= $id ?>&mes=' + selectedMonth;
+                    window.location.href = updatedUrl;
+                    });
+                </script>
             </div>
+            <?php 
+            if (!empty($_GET['mes'])) {
+                $mes=$_GET["mes"];
+            ?>
+                
+                
+            </a>
+            <?php }?>
         </section>
+        <footer>
+
+                <div class="col-10 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href='descargarPDF.php?id=<?= $id?>&mes=<?=$mes?>' target="_blank">
+                    <button class="btn btn-primary my-3 me-md-2"><i class="bi bi-download"></i>Descargar Datos</button>
+                </div>
+            
+            </footer>
     </main>
-    <script>
-document.getElementById('mes').addEventListener('change', function() {
-  var selectedMonth = this.value;
-  var currentUrl = window.location.href;
-  var updatedUrl = currentUrl.split('?')[0] + '?id=<?= $id ?>&mes=' + selectedMonth;
-  window.location.href = updatedUrl;
-});
-</script>
+    
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
