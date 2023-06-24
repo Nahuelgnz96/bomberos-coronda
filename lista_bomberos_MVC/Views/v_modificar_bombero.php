@@ -29,14 +29,16 @@
         include "../Controller/c_modificar_bombero.php";
         while($datos=$sql->fetch_object()){ ?>
             <div class="row mb-3">
-            <label for="image" class="form-label text-white">Foto</label>
+                <label for="image" class="form-label text-white">Foto</label>
                 <?php if (!empty($datos->foto)): ?>
                     <img src="../../img/<?= $datos->foto ?>" alt="Imagen" width="300" height="200">
-                 <?php else: ?>
-                <p>No hay foto existente</p>
+                <?php else: ?>
+                    <p>No hay foto existente</p>
                 <?php endif; ?>
                 <input type="file" class="form-control" name="foto">
+                <input type="hidden" name="foto_actual" value="<?= $datos->foto ?>">
             </div>
+
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label text-light">Nombre</label>
